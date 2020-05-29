@@ -1,5 +1,5 @@
 class Hello:
     def GET(self, name):
         if not name:
-            name = 'World'
+            name = 'eliazar'
         return 'Hola, ' + name + '!'

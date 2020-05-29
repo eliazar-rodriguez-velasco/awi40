@@ -1,4 +1,10 @@
 import web
+import time
+from datetime import datetime
+fecha_hora =time.ctime()
+print('Fecha y Hora Actuales', fecha_hora)
+
+
 from datetime import date
 class Visitas:
   def GET(self, nombre):
@@ -6,6 +12,9 @@ class Visitas:
       cookie = web.cookies()
       visitas = "0"
       fecha = date.today()
+
+
+      
 
 
       if nombre:
@@ -25,8 +34,9 @@ class Visitas:
       else:
         web.setcookie("fecha", fecha, expires="", domain=None)
       
+      
 
-      return "Numero de visitas: " + str(visitas) + "\nNombre: " + str(nombre) + "\nFecha actual: "+ str(fecha)
+      return "Numero de visitas: " + str(visitas) + "\nNombre: " + str(nombre) + "\nFecha actual: "+ str(fecha) +  "\nhora actual:" + str (fecha_hora)
       print(cookie)
     except Exception as e:
       return "error "+str(e.args)
